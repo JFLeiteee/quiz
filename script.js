@@ -1,8 +1,4 @@
-function start() {
-    document.querySelector(".start-screen").classList.add('disable');
-}
-
-let questions = {
+const questions = {
     question1 : {
         titulo: "Qual é a formula da água?",
         alternativas: {
@@ -11,7 +7,6 @@ let questions = {
             c: "02H",
             d: "0H2",
         },
-        resposta: alternativas.b
     },
 
     question2: {
@@ -22,7 +17,6 @@ let questions = {
             c:"Alvarez Cabral",
             d:"Abhraam Lincon",
         },
-        resposta: alternativas.c,
     },
 
     question3: {
@@ -33,7 +27,6 @@ let questions = {
             c:"Fungi",
             d:"Protista",
         },
-        resposta: alternativas.a,
     },
 
     question4: {
@@ -44,6 +37,72 @@ let questions = {
             c:"Nicholas Tesla",
             d:"Albert Einstein",
         },
-        resposta: alternativas.b,
     },
 }
+
+const respostas = {
+    resposta1: questions.question1.alternativas.b,
+    resposta2: questions.question2.alternativas.c,
+    resposta3: questions.question3.alternativas.a,
+    resposta4: questions.question4.alternativas.b,
+}
+
+let n = 0;
+let acertou = 0;
+let errou = 0;
+
+function start() {
+    document.querySelector(".start-screen").classList.add('disable');
+    document.querySelector("#quiz").classList.remove('disable');
+    document.querySelector("#quiz").classList.add('quiz');
+
+    n = 1;
+}
+
+function jogo() {  
+    if (n = 1){
+            let titulo = questions.question1.titulo;
+            let qst1 = questions.question1.alternativas.a;
+            let qst2 = questions.question1.alternativas.b;
+            let qst3 = questions.question1.alternativas.c;
+            let qst4 = questions.question1.alternativas.d;
+            console.log(qst1);
+            document.querySelector(".pergunta-title").innerHTML = titulo;
+            document.querySelector("#alter1").innerText = qst1;
+            document.querySelector("#alter2").innerText = qst2;
+            document.querySelector("#alter3").innerText = qst3;
+            document.querySelector("#alter4").innerText = qst4;
+        
+    }
+}
+
+jogo();
+
+function tentativa(respostas) {
+    let resposta = respostas.resposta1;
+    let btn = document.querySelectorAll(".alter");
+    for(let i = 0; i <= 4; i++) {
+        btn[i].addEventListener("click", function (e) {
+            let enunciado = this.innerHTML;
+            if(enunciado == resposta) {
+                btn[i].classList.remove("alter");
+                btn[i].classList.add("correct");
+                acertou = 1;
+            }
+            else {
+                btn[i].classList.remove("alter");
+                btn[i].classList.add("wrong");
+                errou = errou + 1;
+            }
+            if(errou >= 2) {
+                alert("vc perdeu as chances");
+                document.querySelector(".start-screen").classList.remove("disable");
+                document.querySelector("#quiz").classList.remove("quiz");
+                document.querySelector("#quiz").classList.add("disable");
+            }
+        })
+    }
+    
+}
+
+tentativa(respostas);

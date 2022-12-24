@@ -70,8 +70,13 @@ html, body {
     justify-content: center;
     place-items: center;
     flex-direction: column;
-    background-color: aqua;
 }
+
+.pergunta-title {
+    color: #FFF;
+    text-align: center;
+}
+
 
 .alternativas {
     height: 50%;
@@ -79,9 +84,48 @@ html, body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-    border-radius: 20%;
 }
 
 .alter {
+    height: 10rem;
+    width: 20rem;
+    margin-top: 1rem;
     background-color: #F57D6A;
+    border-radius: 1rem;
+    color:#FFF;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.alter p {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+
+.correct {
+    height: 10rem;
+    width: 20rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    color:#FFF;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: #52cf78;
+}
+
+.wrong {
+    height: 10rem;
+    width: 20rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    color:#FFF;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    background-color: #b63939;
 }
