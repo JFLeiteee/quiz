@@ -1,0 +1,87 @@
+@font-face {
+    font-family: Poppins Regular;
+    src: url(font/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins Bold;
+    src: url(font/Poppins-Bold.ttf);
+}
+
+.bold {
+    font-family: Poppins Bold;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: Poppins Regular;
+    background: rgb(35,48,103);
+    background: linear-gradient(122deg, rgba(35,48,103,1) 0%, rgba(53,59,112,1) 100%);
+}
+
+.start-screen{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+}
+
+.start-title {
+    color: #F57D6A;
+    width: 100%;
+    margin: 0;
+    -webkit-text-stroke: 0.5px #FFF;
+    text-stroke: 0.5px #FFF;
+    font-size: 6rem;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-start {
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-family: Poppins Regular;
+    background-color: transparent;
+}
+
+.btn-start:hover {
+    opacity: 0.8;
+}
+
+.disable {
+    display: none;
+}
+
+.quiz {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+.alternativas {
+    height: 50%;
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    border-radius: 20%;
+}
+
+.alter {
+    background-color: #F57D6A;
+}
