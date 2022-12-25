@@ -14,6 +14,8 @@
 }
 
 html, body {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 100%;
     padding: 0;
@@ -128,4 +130,32 @@ html, body {
     cursor: pointer;
     font-size: 2rem;
     background-color: #b63939;
+}
+
+.restart-modal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    place-items:center;
+    justify-content: center;
+    color: #F57D6A;
+    font-size: 3rem;
+}
+
+.restart-modal button {
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-family: Poppins Regular;
+    background-color: transparent;
+}
+
+.restart-modal button:hover {
+    opacity: 0.8;
+}
+
+.restart-modal button:last-child {
+    color: #b63939;
 }
